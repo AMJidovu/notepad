@@ -7,19 +7,21 @@ import { User } from '../models/User'
 export const users = Router()
 
 users.post('/', async ({ body }, res, next) => {
-  const password = await hash(body.password)
-
   try {
-    const user = await User.create({ ...body, id: uuid(), password })
-    res.status(201).send(user)
+    res.status(201).send(
+      await User.create({
+        ...body,
+        id: uuid(),
+        password: await hash(body.password),
+      }),
+    )
   } catch (error) {
-    if (error.name === 'SequelizeUniqueConstraintError') {
-      res
-        .status(400)
-        .send({ error: 'user.exists', message: 'The email is already in use' })
-    } else {
-      next(error)
-    }
+    error.name === 'SequelizeUniqueConstraintError'
+      ? res.status(400).send({
+          error: 'user.exists',
+          message: 'The email is already in use',
+        })
+      : next(error)
   }
 })
 
