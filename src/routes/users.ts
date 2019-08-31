@@ -13,7 +13,7 @@ users.post('/', async ({ body }, res, next) => {
     const user = await User.create({ ...body, id: uuid(), password })
     res.status(201).send(user)
   } catch (e) {
-    if (e.name == 'SequelizeUniqueConstraintError') {
+    if (e.name === 'SequelizeUniqueConstraintError') {
       res
         .status(400)
         .send({ error: 'user.exists', message: 'The email is already in use' })
