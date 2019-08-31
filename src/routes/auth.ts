@@ -7,6 +7,10 @@ import { ERRORS } from '../constants'
 export const auth = Router()
 
 auth.post('/login', async ({ body }, res, next) => {
+  if (!body.email || !body.password) {
+    return res.status(400).send(ERRORS.MISSING_CREDENTIALS)
+  }
+
   try {
     const user = await User.findOne({ where: { email: body.email } })
 
