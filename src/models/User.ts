@@ -8,6 +8,8 @@ import {
   IsUUID,
   HasMany,
   Scopes,
+  Unique,
+  IsEmail,
 } from 'sequelize-typescript'
 import { Article } from './Article'
 
@@ -31,8 +33,10 @@ export class User extends Model<User> {
   @Column
   lastName!: string
 
+  @Unique
+  @IsEmail
   @Column
-  email!: string
+  email: string
 
   @Column
   password!: string

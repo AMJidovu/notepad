@@ -1,16 +1,25 @@
 import { Router } from 'express'
 import { v4 as uuid } from 'uuid'
+import { hash } from 'argon2'
 
 import { User } from '../models/User'
 
 export const users = Router()
 
-users.post('/', async (req, res, next) => {
+users.post('/', async ({ body }, res, next) => {
+  const password = await hash(body.password)
+
   try {
-    const user = await User.create({ id: uuid(), ...req.body })
+    const user = await User.create({ ...body, id: uuid(), password })
     res.status(201).send(user)
   } catch (e) {
-    next(e)
+    if (e.name == 'SequelizeUniqueConstraintError') {
+      res
+        .status(400)
+        .send({ error: 'user.exists', message: 'The email is already in use' })
+    } else {
+      next(e)
+    }
   }
 })
 
