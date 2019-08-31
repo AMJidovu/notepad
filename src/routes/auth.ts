@@ -11,7 +11,7 @@ auth.post('/login', async ({ body }, res, next) => {
     const user = await User.findOne({ where: { email: body.email } })
 
     if (user && (await verify(user.password, body.password))) {
-      res.send({ auth: true })
+      return res.send({ auth: true })
     }
 
     res.status(400).send(ERRORS.INVALID_CREDENTIALS)
