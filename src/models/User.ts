@@ -6,8 +6,18 @@ import {
   UpdatedAt,
   PrimaryKey,
   IsUUID,
+  HasMany,
+  Scopes,
 } from 'sequelize-typescript'
+import { Article } from './Article'
 
+@Scopes(() => ({
+  withoutPassword: {
+    attributes: {
+      exclude: ['password'],
+    },
+  },
+}))
 @Table
 export class User extends Model<User> {
   @IsUUID(4)
@@ -26,6 +36,9 @@ export class User extends Model<User> {
 
   @Column
   password!: string
+
+  @HasMany(() => Article)
+  articles!: Article
 
   @CreatedAt
   @Column

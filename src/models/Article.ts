@@ -7,6 +7,7 @@ import {
   IsUUID,
   PrimaryKey,
   BelongsTo,
+  ForeignKey,
 } from 'sequelize-typescript'
 
 import { User } from './User'
@@ -26,6 +27,9 @@ export class Article extends Model<Article> {
 
   @BelongsTo(() => User)
   author?: User
+
+  @ForeignKey(() => User)
+  authorId?: string
 
   @CreatedAt
   @Column
