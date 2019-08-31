@@ -18,6 +18,7 @@ app.use('/api/users', users)
 app.use('/api/auth', auth)
 
 app.listen(3000, async err => {
-  await sequelize.sync()
+  console.log('> Syncing models with database')
+  await sequelize.sync({ logging: false })
   console.log('> Ready on http://localhost:3000')
 })
