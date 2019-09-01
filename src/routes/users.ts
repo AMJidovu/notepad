@@ -47,3 +47,18 @@ users.get('/', authenticate, async (req, res, next) => {
     next(error)
   }
 })
+
+users.delete('/:id', authenticate, async (req, res, next) => {
+  try {
+    const user = await User.findByPk(req.params.id)
+
+    if (user) {
+      await user.destroy()
+      return res.status(OK).send({})
+    }
+
+    res.status(BAD_REQUEST).send(ERRORS.USER_NOT_FOUND)
+  } catch (error) {
+    next(error)
+  }
+})

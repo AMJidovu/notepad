@@ -17,8 +17,10 @@ export const authenticate = async (req: Request, res: Response, next) => {
 
       if (user) {
         res.locals.user = user
-        next()
+        return next()
       }
+
+      return res.status(UNAUTHORIZED).send(ERRORS.INVALID_AUTHORIZATION)
     } catch (error) {
       return res.status(UNAUTHORIZED).send(ERRORS.INVALID_AUTHORIZATION)
     }

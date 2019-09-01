@@ -27,4 +27,8 @@ export const ERRORS = {
     code: 'user.malformed',
     message: 'User is malformed or has missing fields.',
   },
+  USER_NOT_FOUND: {
+    code: 'user.not_found',
+    message: 'Could not find user with that ID.',
+  },
 }
