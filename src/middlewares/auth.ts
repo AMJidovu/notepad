@@ -22,7 +22,7 @@ export const authenticate = async (req: Request, res: Response, next) => {
 
       throw Error()
     } catch (error) {
-      return res.status(UNAUTHORIZED).send(ERRORS.INVALID_AUTHORIZATION)
+      res.status(UNAUTHORIZED).send(ERRORS.INVALID_AUTHORIZATION)
     }
   } else {
     res.status(UNAUTHORIZED).send(ERRORS.MISSING_AUTHORIZATION)
