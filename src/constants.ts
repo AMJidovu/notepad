@@ -1,4 +1,16 @@
+import config from '../config'
+
+export const CONFIG = config
+
 export const ERRORS = {
+  INVALID_AUTHORIZATION: {
+    code: 'authorization.invalid',
+    message: 'Invalid authorization header.',
+  },
+  MISSING_AUTHORIZATION: {
+    code: 'authorization.missing',
+    message: 'Authorization header missing or malformed.',
+  },
   INVALID_CREDENTIALS: {
     code: 'credentials.invalid',
     message: 'Invalid authentication credentials.',

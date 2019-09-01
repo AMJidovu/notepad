@@ -1,9 +1,10 @@
 import { Router } from 'express'
 import { verify } from 'argon2'
 import { check, validationResult } from 'express-validator'
+import { sign } from 'jsonwebtoken'
 
 import { User } from '../models/User'
-import { ERRORS } from '../constants'
+import { ERRORS, CONFIG } from '../constants'
 
 export const auth = Router()
 
@@ -23,7 +24,12 @@ auth.post(
       const user = await User.findOne({ where: { email: req.body.email } })
 
       if (user && (await verify(user.password, req.body.password))) {
-        return res.send({ auth: true })
+        // prettier-ignore
+        const token = sign({
+          user: user.id,
+        }, CONFIG.secret, { expiresIn: 3600 })
+
+        return res.send({ token, expiresIn: 3600 })
       }
 
       res.status(400).send(ERRORS.INVALID_CREDENTIALS)

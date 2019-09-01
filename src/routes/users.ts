@@ -5,6 +5,7 @@ import { check, validationResult } from 'express-validator'
 
 import { User } from '../models/User'
 import { ERRORS } from '../constants'
+import { authenticate } from '../middlewares/auth'
 
 export const users = Router()
 
@@ -39,7 +40,7 @@ users.post(
   },
 )
 
-users.get('/', async (req, res, next) => {
+users.get('/', authenticate, async (req, res, next) => {
   try {
     res.status(200).send(await User.scope('withoutPassword').findAll())
   } catch (error) {
