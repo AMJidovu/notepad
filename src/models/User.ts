@@ -42,7 +42,7 @@ export class User extends Model<User> {
   password!: string
 
   @HasMany(() => Article)
-  articles!: Article
+  articles!: Article[]
 
   @CreatedAt
   @Column
