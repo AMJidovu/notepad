@@ -30,7 +30,7 @@ You can run Notepad locally in development mode for testing by cloning the repos
 
 I use Visual Studio Code to debug Notepad, here is a sample debug configuration:
 
-````json
+```json
 {
   "type": "node",
   "request": "launch",
@@ -60,4 +60,7 @@ As of now there is no image on the docker hub. To run with docker, please clone 
 ## License
 
 Notepad is licensed under the MIT license.
-````
+
+```
+
+```
