@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  notepad:
+    build: .
+    container_name: 'notepad'
+    environment:
+      NODE_ENV: production
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./database:/var/lib/notepad/database

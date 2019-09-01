@@ -26,14 +26,18 @@ Furthermore, it provides a minimalist interface for viewing your articles:
 
 You can run Notepad locally in development mode for testing by cloning the repository, installing dependecies with `yarn`, and finally running the development server with `yarn dev`.
 
+## Building from Source
+
+You can build Notepad from source very simply. First clone this repository, then install dependecies with `yarn`. After that is complete simply run `yarn build` to build the application, when that is complete run `yarn start` to start the application.
+
 ## Running with Docker
 
-> TODO
+As of now there is no image on the docker hub. To run with docker, please clone this repository, modify `docker-compose.yml` for your needs and then run `docker-compose up`.
 
 ## Contributing
 
 1. Fork this repository to your own GitHub account and then clone it locally.
-2. Ensure that you have Docker installed on your machine.
+2. Ensure that you have Docker or Node installed on your machine.
 3. Commit any changes, then open a pull request.
 
 ## License
