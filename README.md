@@ -60,7 +60,3 @@ As of now there is no image on the docker hub. To run with docker, please clone 
 ## License
 
 Notepad is licensed under the MIT license.
-
-```
-
-```
