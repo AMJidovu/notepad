@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 import { ERRORS, CONFIG } from '../constants'
 import { User } from '../models/User'
 import { promisifyAll } from 'bluebird'
+import { UNAUTHORIZED } from 'http-status-codes'
 
 const { verify } = promisifyAll(jwt)
 
@@ -19,9 +20,9 @@ export const authenticate = async (req: Request, res: Response, next) => {
         next()
       }
     } catch (error) {
-      return res.status(403).send(ERRORS.INVALID_AUTHORIZATION)
+      return res.status(UNAUTHORIZED).send(ERRORS.INVALID_AUTHORIZATION)
     }
   } else {
-    res.status(403).send(ERRORS.MISSING_AUTHORIZATION)
+    res.status(UNAUTHORIZED).send(ERRORS.MISSING_AUTHORIZATION)
   }
 }

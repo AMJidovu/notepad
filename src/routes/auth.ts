@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { verify } from 'argon2'
 import { check, validationResult } from 'express-validator'
 import { sign } from 'jsonwebtoken'
+import { BAD_REQUEST } from 'http-status-codes'
 
 import { User } from '../models/User'
 import { ERRORS, CONFIG } from '../constants'
@@ -17,7 +18,7 @@ auth.post(
   ],
   async (req, res, next) => {
     if (!validationResult(req).isEmpty()) {
-      return res.status(400).send(ERRORS.MISSING_CREDENTIALS)
+      return res.status(BAD_REQUEST).send(ERRORS.MISSING_CREDENTIALS)
     }
 
     try {
@@ -32,7 +33,7 @@ auth.post(
         return res.send({ token, expiresIn: 3600 })
       }
 
-      res.status(400).send(ERRORS.INVALID_CREDENTIALS)
+      res.status(BAD_REQUEST).send(ERRORS.INVALID_CREDENTIALS)
     } catch (error) {
       next(error)
     }
