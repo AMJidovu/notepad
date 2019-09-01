@@ -14,6 +14,8 @@ Furthermore, it provides a minimalist interface for viewing your articles:
 
 ## API
 
+`GET /api/articles` List Articles
+
 `POST /api/articles` Create Article
 
 `GET /api/articles/{article-id}` Get Article
