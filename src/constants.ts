@@ -11,4 +11,8 @@ export const ERRORS = {
     code: 'user.exists',
     message: 'User with that email already exists.',
   },
+  USER_MALFORMED: {
+    code: 'user.malformed',
+    message: 'User is malformed or has missing fields.',
+  },
 }
