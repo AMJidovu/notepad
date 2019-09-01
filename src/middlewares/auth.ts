@@ -20,7 +20,7 @@ export const authenticate = async (req: Request, res: Response, next) => {
         return next()
       }
 
-      return res.status(UNAUTHORIZED).send(ERRORS.INVALID_AUTHORIZATION)
+      throw Error()
     } catch (error) {
       return res.status(UNAUTHORIZED).send(ERRORS.INVALID_AUTHORIZATION)
     }
