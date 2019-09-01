@@ -14,9 +14,9 @@ Furthermore, it provides a minimalist interface for viewing your articles:
 
 ## API
 
-`GET /api/articles/{article-id}` Get Article
-
 `POST /api/articles` Create Article
+
+`GET /api/articles/{article-id}` Get Article
 
 `UPDATE /api/articles/{article-id}` Update Article
 
