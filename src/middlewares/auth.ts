@@ -2,6 +2,7 @@ import { promisifyAll } from 'bluebird'
 import { Request, Response } from 'express'
 import { UNAUTHORIZED } from 'http-status-codes'
 import jwt from 'jsonwebtoken'
+
 import { CONFIG, ERRORS } from '../constants'
 import { User } from '../models/User'
 

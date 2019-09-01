@@ -11,6 +11,7 @@ import {
   Unique,
   UpdatedAt,
 } from 'sequelize-typescript'
+
 import { Article } from './Article'
 
 @Scopes(() => ({
