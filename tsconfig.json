@@ -18,6 +18,5 @@
     "allowJs": false,
     "resolveJsonModule": true,
     "noUnusedLocals": true
-  },
-  "files": ["src/custom.d.ts"]
+  }
 }
