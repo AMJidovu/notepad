@@ -26,6 +26,23 @@ Furthermore, it provides a minimalist interface for viewing your articles:
 
 You can run Notepad locally in development mode for testing by cloning the repository, installing dependecies with `yarn`, and finally running the development server with `yarn dev`.
 
+### Debugging
+
+I use Visual Studio Code to debug Notepad, here is a sample debug configuration:
+
+````json
+{
+  "type": "node",
+  "request": "launch",
+  "name": "Launch Program",
+  "cwd": "${workspaceFolder}",
+  "program": "${workspaceFolder}/src/index.ts",
+  "preLaunchTask": "npm: build",
+  "console": "integratedTerminal",
+  "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+}
+```
+
 ## Building from Source
 
 You can build Notepad from source very simply. First clone this repository, then install dependecies with `yarn`. After that is complete simply run `yarn build` to build the application, when that is complete run `yarn start` to start the application.
@@ -43,3 +60,4 @@ As of now there is no image on the docker hub. To run with docker, please clone 
 ## License
 
 Notepad is licensed under the MIT license.
+````
