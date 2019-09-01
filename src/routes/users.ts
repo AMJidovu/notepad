@@ -20,7 +20,6 @@ users.post(
     check('password').exists().isLength({ min: 8 }),
   ],
   async (req, res, next) => {
-    console.log(validationResult(req))
     if (!validationResult(req).isEmpty()) {
       return res.status(BAD_REQUEST).send(ERRORS.USER_MALFORMED)
     }
