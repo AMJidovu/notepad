@@ -57,7 +57,9 @@ As of now there is no image on the docker hub. To run with docker, please clone 
 
 1. Fork this repository to your own GitHub account and then clone it locally.
 2. Ensure that you have Docker or Node installed on your machine.
-3. Commit any changes, then open a pull request.
+3. While developing, ensure that you are formatting all code with prettier, you can do this by running `yarn format`.
+4. Before commiting, please run `yarn lint` and `yarn typecheck` and correct any errors.
+5. Commit any changes, then open a pull request.
 
 ## License
 
