@@ -1,15 +1,15 @@
 import {
-  Model,
   Column,
-  Table,
   CreatedAt,
-  UpdatedAt,
-  PrimaryKey,
-  IsUUID,
   HasMany,
-  Scopes,
-  Unique,
   IsEmail,
+  IsUUID,
+  Model,
+  PrimaryKey,
+  Scopes,
+  Table,
+  Unique,
+  UpdatedAt,
 } from 'sequelize-typescript'
 import { Article } from './Article'
 

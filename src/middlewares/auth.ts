@@ -1,9 +1,9 @@
-import { Request, Response } from 'express'
-import jwt from 'jsonwebtoken'
-import { ERRORS, CONFIG } from '../constants'
-import { User } from '../models/User'
 import { promisifyAll } from 'bluebird'
+import { Request, Response } from 'express'
 import { UNAUTHORIZED } from 'http-status-codes'
+import jwt from 'jsonwebtoken'
+import { CONFIG, ERRORS } from '../constants'
+import { User } from '../models/User'
 
 const { verify } = promisifyAll(jwt)
 

@@ -1,13 +1,13 @@
 import {
-  Model,
-  Column,
-  Table,
-  CreatedAt,
-  UpdatedAt,
-  IsUUID,
-  PrimaryKey,
   BelongsTo,
+  Column,
+  CreatedAt,
   ForeignKey,
+  IsUUID,
+  Model,
+  PrimaryKey,
+  Table,
+  UpdatedAt,
 } from 'sequelize-typescript'
 
 import { User } from './User'

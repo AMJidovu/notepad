@@ -1,12 +1,11 @@
-import express from 'express'
 import bodyParser from 'body-parser'
 import compression from 'compression'
+import express from 'express'
 import morgan from 'morgan'
 
-import { sequelize } from './sequelize'
-
-import { users } from './routes/users'
 import { auth } from './routes/auth'
+import { users } from './routes/users'
+import { sequelize } from './sequelize'
 
 const app = express()
 
