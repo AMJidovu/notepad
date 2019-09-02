@@ -1,4 +1,4 @@
-exports.default = {
+module.exports = {
   secret: 'notepad',
   database: {
     dialect: 'sqlite',
