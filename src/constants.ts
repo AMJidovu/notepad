@@ -1,6 +1,4 @@
-import config from '../config'
-
-export const CONFIG = config
+export { default as CONFIG } from '../config'
 
 export const ERRORS = {
   INVALID_AUTHORIZATION: {
