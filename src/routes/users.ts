@@ -5,6 +5,7 @@ import { BAD_REQUEST, CREATED, OK } from 'http-status-codes'
 import { v4 as uuid } from 'uuid'
 
 import { CONFIG, ERRORS } from '../constants'
+import { compileTemplate } from '../mail'
 import { allowInitialUser, authenticate } from '../middlewares/auth'
 import { User } from '../models/User'
 import { transporter } from '../services/mailer'
@@ -37,7 +38,7 @@ users.post(
         from: CONFIG.fromAddress,
         to: user.email,
         subject: 'Welcome to Notepad',
-        text: `Hi ${user.firstName},\n Welcome to Notepad`,
+        html: await compileTemplate('welcome', { user }),
       }
 
       transporter.sendMail(mail)
