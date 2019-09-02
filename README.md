@@ -36,7 +36,7 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 A sample `config.js` is provided in the repository.
 
-Note: Typings are provided in `src/typings/config.d.ts`.
+Note: Typings are provided in [`src/typings/config.d.ts`](src/typings/config.d.ts).
 
 **Available options are as follows:**
 
