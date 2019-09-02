@@ -32,6 +32,17 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 `DELETE /api/articles/{article-id}` Delete Article
 
+## Configuration
+
+A sample `config.js` is provided in the repository.
+
+Note: Typings are provided in `src/typings/config.d.ts`.
+
+**Available options are as follows:**
+
+- `secret` (type _`string`_) - Secret used to sign JSON Web Tokens
+- `database` (type _`SequelizeOptions`_) - Standard sequelize connection options
+
 ## Running Locally
 
 You can run Notepad locally in development mode for testing by cloning the repository, installing dependecies with `yarn`, and finally running the development server with `yarn dev`.
