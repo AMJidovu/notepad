@@ -14,6 +14,14 @@ Furthermore, it provides a minimalist interface for viewing your articles:
 
 ## API
 
+**All endpoints that modify the database require a valid `Authorization` header.**
+
+### Authorization
+
+`POST /api/auth/login` Authenticate User
+
+### Articles
+
 `GET /api/articles` List Articles
 
 `POST /api/articles` Create Article
