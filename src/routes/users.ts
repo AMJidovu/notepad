@@ -6,9 +6,9 @@ import { v4 as uuid } from 'uuid'
 
 import { CONFIG, ERRORS } from '../constants'
 import { compileTemplate } from '../mail'
+import { transporter } from '../mailer'
 import { allowInitialUser, authenticate } from '../middlewares/auth'
 import { User } from '../models/User'
-import { transporter } from '../services/mailer'
 
 export const users = Router()
 
