@@ -97,7 +97,7 @@ The file structure consists of the following folders:
 
 Prettier is used to format the code. It's formatted automatically when you commit, or by running `yarn format`. Prettier is configured to use 2 spaces, single quotes, and no semi colons. Please stick to these conventions when writing code as well. It helps if you configure your editor to automatically format files when you save them. There are plugins to do this in most popular editors.
 
-### Linting
+### Linting
 
 TSLint is used to lint the code. You can run `yarn lint` to see the lint output. TSLint is configured to match the styling options set by Prettier. A few other rules have also been configured such as ordered imports. It helps if you configure your editor to display linting output inline. I recommend using Visual Studio Code since it has very good typescript support.
 
