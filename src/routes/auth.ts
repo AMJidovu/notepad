@@ -4,7 +4,7 @@ import { BAD_REQUEST } from 'http-status-codes'
 import { sign } from 'jsonwebtoken'
 
 import { CONFIG, ERRORS } from '../constants'
-import { authenticate } from '../services/authenticate'
+import { authenticate } from '../services/auth'
 
 export const auth = Router()
 
