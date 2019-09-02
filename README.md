@@ -81,6 +81,30 @@ As of now there is no image on the docker hub. To run with docker, please clone 
 4. Before commiting, please run `yarn lint` and `yarn typecheck` and correct any errors.
 5. Commit any changes, then open a pull request.
 
+### Architecture
+
+The codebase is written in Typescript, and is contained in the `src` directory.
+
+The file structure consists of the following folders:
+
+- `middlewares` - Contains middlewares used by various routes
+- `models` - Contains Sequelize database models
+- `routes` - Contains express routers for API endpoints
+- `services` - Contains various functions and configurations
+- `typings` - Contains Typescript type and interface declerations
+
+### Styling
+
+Prettier is used to format the code. It's formatted automatically when you commit, or by running `yarn format`. Prettier is configured to use 2 spaces, single quotes, and no semi colons. Please stick to these conventions when writing code as well. It helps if you configure your editor to automatically format files when you save them. There are plugins to do this in most popular editors.
+
+### Linting
+
+TSLint is used to lint the code. You can run `yarn lint` to see the lint output. TSLint is configured to match the styling options set by Prettier. A few other rules have also been configured such as ordered imports. It helps if you configure your editor to display linting output inline. I recommend using Visual Studio Code since it has very good typescript support.
+
+### Testing
+
+As of now, tests have not yet been written. Progress is being tracked in #12.
+
 ## License
 
 Notepad is licensed under the MIT license.
