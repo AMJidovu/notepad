@@ -5,7 +5,7 @@ import { BAD_REQUEST, CREATED, OK } from 'http-status-codes'
 import { v4 as uuid } from 'uuid'
 
 import { ERRORS } from '../constants'
-import { authenticate } from '../middlewares/auth'
+import { allowInitialUser, authenticate } from '../middlewares/auth'
 import { User } from '../models/User'
 
 export const users = Router()
@@ -19,6 +19,7 @@ users.post(
     check('email').exists().isEmail(),
     check('password').exists().isLength({ min: 8 }),
   ],
+  allowInitialUser,
   async (req, res, next) => {
     if (!validationResult(req).isEmpty()) {
       return res.status(BAD_REQUEST).send(ERRORS.USER_MALFORMED)

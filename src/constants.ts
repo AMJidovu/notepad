@@ -32,4 +32,8 @@ export const ERRORS = {
     code: 'user.not_found',
     message: 'Could not find user with that ID.',
   },
+  SERVER_ERROR: {
+    code: 'server.error',
+    message: 'There was an error on our end, please try again.',
+  },
 }

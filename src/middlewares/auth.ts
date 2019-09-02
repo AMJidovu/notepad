@@ -1,6 +1,6 @@
 import { promisifyAll } from 'bluebird'
 import { Request, Response } from 'express'
-import { UNAUTHORIZED } from 'http-status-codes'
+import { INTERNAL_SERVER_ERROR, UNAUTHORIZED } from 'http-status-codes'
 import jwt from 'jsonwebtoken'
 
 import { CONFIG, ERRORS } from '../constants'
@@ -27,5 +27,17 @@ export const authenticate = async (req: Request, res: Response, next) => {
     }
   } else {
     res.status(UNAUTHORIZED).send(ERRORS.MISSING_AUTHORIZATION)
+  }
+}
+
+export const allowInitialUser = async (req: Request, res: Response, next) => {
+  try {
+    if ((await User.findAll()).length === 0) {
+      return next()
+    }
+
+    authenticate(req, res, next)
+  } catch (error) {
+    res.status(INTERNAL_SERVER_ERROR).send(ERRORS.SERVER_ERROR)
   }
 }
