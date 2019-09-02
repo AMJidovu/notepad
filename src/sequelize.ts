@@ -4,6 +4,6 @@ import { CONFIG } from './constants'
 
 export const sequelize = new Sequelize({
   logging: false,
-  models: [path.join(__dirname, '..', 'models')],
+  models: [path.join(__dirname, 'models')],
   ...CONFIG.database,
 })
