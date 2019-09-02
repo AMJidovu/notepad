@@ -40,7 +40,7 @@ Note: Typings are provided in [`src/typings/config.d.ts`](src/typings/config.d.t
 
 **Available options are as follows:**
 
-- `secret` (type: _`string`_) - Secret used to sign JSON Web Tokens
+- `secret` (type: _`string`_) - Secret used to sign JWTs, I recommend generate a 32 character long string with a password manager
 - `database` (type: [_`SequelizeOptions`_](https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor)) - Standard sequelize connection options
 - `mailer` (type: [_`TransportOptions`_](https://nodemailer.com/smtp/)) - Standard Nodemailer SMTP Transport Options
 
