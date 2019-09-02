@@ -5,10 +5,10 @@ import { BAD_REQUEST, CREATED, OK } from 'http-status-codes'
 import { v4 as uuid } from 'uuid'
 
 import { CONFIG, ERRORS } from '../constants'
-import { compileTemplate } from '../mail'
 import { transporter } from '../mailer'
 import { allowInitialUser, authenticate } from '../middlewares/auth'
 import { User } from '../models/User'
+import { compileTemplate } from '../services/mail'
 
 export const users = Router()
 
