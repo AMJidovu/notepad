@@ -14,7 +14,7 @@ Furthermore, it provides a minimalist interface for viewing your articles:
 
 ## API
 
-**All endpoints that modify the database require a valid `Authorization` header.**
+All endpoints that modify the database require a valid `Authorization` header.
 
 ### Authorization
 
