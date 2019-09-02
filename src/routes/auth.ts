@@ -1,11 +1,10 @@
-import { verify } from 'argon2'
 import { Router } from 'express'
 import { check, validationResult } from 'express-validator'
 import { BAD_REQUEST } from 'http-status-codes'
 import { sign } from 'jsonwebtoken'
 
 import { CONFIG, ERRORS } from '../constants'
-import { User } from '../models/User'
+import { authenticate } from '../services/authenticate'
 
 export const auth = Router()
 
@@ -22,19 +21,19 @@ auth.post(
     }
 
     try {
-      const user = await User.findOne({ where: { email: req.body.email } })
+      const user = await authenticate(req.body)
 
-      if (user && (await verify(user.password, req.body.password))) {
-        // prettier-ignore
-        const token = sign({
-          user: user.id,
-        }, CONFIG.secret, { expiresIn: 3600 })
+      // prettier-ignore
+      const token = sign({
+        user: user.id,
+      }, CONFIG.secret, { expiresIn: 3600 })
 
-        return res.send({ token, expiresIn: 3600 })
+      return res.send({ token, expiresIn: 3600 })
+    } catch (error) {
+      if (!error) {
+        res.status(BAD_REQUEST).send(ERRORS.INVALID_CREDENTIALS)
       }
 
-      res.status(BAD_REQUEST).send(ERRORS.INVALID_CREDENTIALS)
-    } catch (error) {
       next(error)
     }
   },
