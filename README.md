@@ -103,8 +103,10 @@ TSLint is used to lint the code. You can run `yarn lint` to see the lint output.
 
 ### Testing
 
-As of now, tests have not yet been written. Progress is being tracked in #12.
+As of now, tests have not yet been written. Progress is being tracked in [#12][i12].
 
 ## License
 
 Notepad is licensed under the MIT license.
+
+[i12]: https://github.com/notepad/notepad/issues/12
