@@ -1,4 +1,7 @@
-export { default as CONFIG } from '../config'
+import config from '../config'
+import { Config } from './typings/config'
+
+export const CONFIG: Config = config
 
 export const ERRORS = {
   INVALID_AUTHORIZATION: {
