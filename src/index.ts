@@ -5,7 +5,7 @@ import morgan from 'morgan'
 
 import { auth } from './routes/auth'
 import { users } from './routes/users'
-import { sequelize } from './sequelize'
+import { sequelize } from './services/sequelize'
 
 const app = express()
 
