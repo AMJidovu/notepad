@@ -34,7 +34,7 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 ## Configuration
 
-A sample `config.js` is provided in the repository.
+A sample `config.example.js` is provided in the repository.
 
 Note: Typings are provided in [`src/typings/config.d.ts`](src/typings/config.d.ts).
 
@@ -42,6 +42,7 @@ Note: Typings are provided in [`src/typings/config.d.ts`](src/typings/config.d.t
 
 - `secret` (type: _`string`_) - Secret used to sign JSON Web Tokens
 - `database` (type: [_`SequelizeOptions`_](https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor)) - Standard sequelize connection options
+- `mailer` (type: [_`TransportOptions`_](https://nodemailer.com/smtp/)) - Standard Nodemailer SMTP Transport Options
 
 ## Running Locally
 

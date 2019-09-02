@@ -4,7 +4,8 @@ import { check, validationResult } from 'express-validator'
 import { BAD_REQUEST, CREATED, OK } from 'http-status-codes'
 import { v4 as uuid } from 'uuid'
 
-import { ERRORS } from '../constants'
+import { CONFIG, ERRORS } from '../constants'
+import { transporter } from '../mailer'
 import { allowInitialUser, authenticate } from '../middlewares/auth'
 import { User } from '../models/User'
 
@@ -26,13 +27,22 @@ users.post(
     }
 
     try {
-      res.status(CREATED).send(
-        await User.create({
-          ...req.body,
-          id: uuid(),
-          password: await hash(req.body.password),
-        }),
-      )
+      const user = await User.create({
+        ...req.body,
+        id: uuid(),
+        password: await hash(req.body.password),
+      })
+
+      const mail = {
+        from: CONFIG.fromAddress,
+        to: user.email,
+        subject: 'Welcome to Notepad',
+        text: `Hi ${user.firstName},\n Welcome to Notepad`,
+      }
+
+      transporter.sendMail(mail)
+
+      res.status(CREATED).send(user)
     } catch (error) {
       error.name === 'SequelizeUniqueConstraintError'
         ? res.status(BAD_REQUEST).send(ERRORS.USER_EXISTS)

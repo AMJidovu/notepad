@@ -8,3 +8,4 @@ Untitled*
 .env
 dist
 database/
+config.js
