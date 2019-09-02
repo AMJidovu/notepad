@@ -40,8 +40,8 @@ Note: Typings are provided in `src/typings/config.d.ts`.
 
 **Available options are as follows:**
 
-- `secret` (type _`string`_) - Secret used to sign JSON Web Tokens
-- `database` (type _`SequelizeOptions`_) - Standard sequelize connection options
+- `secret` (type: _`string`_) - Secret used to sign JSON Web Tokens
+- `database` (type: [_`SequelizeOptions`_](https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor)) - Standard sequelize connection options
 
 ## Running Locally
 
