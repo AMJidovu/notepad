@@ -1,5 +1,5 @@
 import { verify } from 'argon2'
-import { User } from '../models/User'
+import { User } from '../../models/User'
 
 export const authenticate = async ({ email, password }): Promise<User> => {
   try {
