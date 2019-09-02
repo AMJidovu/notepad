@@ -19,3 +19,5 @@ export const compileTemplate = async (
     return Promise.reject(error)
   }
 }
+
+export { transporter } from './mailer'
