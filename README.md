@@ -34,14 +34,13 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 ## Configuration
 
-A sample `config.example.js` is provided in the repository.
-
-Note: Typings are provided in [`src/typings/config.d.ts`](src/typings/config.d.ts).
+A [sample configuration file](config.example.json) is provided in the repository.
 
 **Available options are as follows:**
 
 - `secret` (type: _`string`_) - Secret used to sign JWTs. (Note: generate a long string with a password manager)
 - `database` (type: [_`SequelizeOptions`_](https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor)) - Standard sequelize connection options
+- `fromAddress` (type _`string`_) - The address that emails are sent from
 - `mailer` (type: [_`TransportOptions`_](https://nodemailer.com/smtp/)) - Standard Nodemailer SMTP Transport Options
 
 ## Running Locally

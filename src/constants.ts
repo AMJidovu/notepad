@@ -1,7 +1,6 @@
-import config from '../config'
-import { Config } from './typings/config'
+import config from '../config.json'
 
-export const CONFIG: Config = config
+export const CONFIG: any = config
 
 export const ERRORS = {
   INVALID_AUTHORIZATION: {
