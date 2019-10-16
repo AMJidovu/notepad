@@ -18,19 +18,19 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 ### Authorization
 
-`POST /api/auth/login` Authenticate User
+`POST /api/auth/login` - Authenticate User
 
 ### Articles
 
-`GET /api/articles` List Articles
+`GET /api/articles` - List Articles
 
-`POST /api/articles` Create Article
+`POST /api/articles` - Create Article
 
-`GET /api/articles/{article-id}` Get Article
+`GET /api/articles/{article-id}` - Get Article
 
-`UPDATE /api/articles/{article-id}` Update Article
+`UPDATE /api/articles/{article-id}` - Update Article
 
-`DELETE /api/articles/{article-id}` Delete Article
+`DELETE /api/articles/{article-id}` - Delete Article
 
 ## Configuration
 
@@ -106,6 +106,7 @@ As of now, tests have not yet been written. Progress is being tracked in [#12][i
 
 ## License
 
-Notepad is licensed under the MIT license.
+Notepad is licensed under [the MIT license](license).
 
 [i12]: https://github.com/notepad/notepad/issues/12
+[license]: https://github.com/notepad/notepad/blob/master/LICENSE.md
