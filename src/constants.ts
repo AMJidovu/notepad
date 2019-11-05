@@ -31,6 +31,10 @@ export const ERRORS = {
     code: "user.not_found",
     message: "Could not find user with that ID.",
   },
+  ARTICLE_MALFORMED: {
+    code: "article.malformed",
+    message: "Article is malformed or has missing fields.",
+  },
   SERVER_ERROR: {
     code: "server.error",
     message: "There was an error on our end, please try again.",
