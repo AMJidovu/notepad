@@ -35,7 +35,7 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 ### Articles
 
-- [ x] `GET /api/articles` List Articles
+- [x] `GET /api/articles` List Articles
 
 - [x] `POST /api/articles` Create Article
 
