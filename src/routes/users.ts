@@ -7,7 +7,6 @@ import { v4 as uuid } from 'uuid'
 import { CONFIG, ERRORS } from '../constants'
 import { allowInitialUser, authenticate } from '../middlewares/auth'
 import { User } from '../models/User'
-import { compileTemplate, transporter } from '../services/mail'
 
 export const users = Router()
 
@@ -32,15 +31,6 @@ users.post(
         id: uuid(),
         password: await hash(req.body.password),
       })
-
-      const mail = {
-        from: CONFIG.fromAddress,
-        to: user.email,
-        subject: 'Welcome to Notepad',
-        html: await compileTemplate('welcome', { user }),
-      }
-
-      transporter.sendMail(mail)
 
       res.status(CREATED).send(user)
     } catch (error) {

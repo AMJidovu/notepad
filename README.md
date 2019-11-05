@@ -40,8 +40,6 @@ A [sample configuration file](config.example.json) is provided in the repository
 
 - `secret` (type: _`string`_) - Secret used to sign JWTs. (Note: generate a long string with a password manager)
 - `database` (type: [_`SequelizeOptions`_](https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor)) - Standard sequelize connection options
-- `fromAddress` (type _`string`_) - The address that emails are sent from
-- `mailer` (type: [_`TransportOptions`_](https://nodemailer.com/smtp/)) - Standard Nodemailer SMTP Transport Options
 
 ## Running Locally
 
@@ -89,7 +87,7 @@ The file structure consists of the following folders:
 - `middlewares` - Contains middlewares used by various routes
 - `models` - Contains Sequelize database models
 - `routes` - Contains express routers for API endpoints
-- `services` - Contains various functions and configurations
+- `lib` - Contains various helper and setup functions
 - `typings` - Contains Typescript type and interface declerations
 
 ### Styling
