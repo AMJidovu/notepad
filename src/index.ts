@@ -5,6 +5,7 @@ import morgan from "morgan"
 
 import { auth } from "./routes/auth"
 import { users } from "./routes/users"
+import { articles } from "./routes/articles"
 import { sequelize } from "./lib/sequelize"
 
 const app = express()
@@ -15,6 +16,7 @@ app.use(morgan("dev"))
 
 app.use("/api/users", users)
 app.use("/api/auth", auth)
+app.use("/api/articles", articles)
 
 app.listen(3000, async err => {
   if (err) { throw err } // prettier-ignore
