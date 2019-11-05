@@ -4,7 +4,7 @@ import { check, validationResult } from "express-validator"
 import { BAD_REQUEST, CREATED, OK } from "http-status-codes"
 import { v4 as uuid } from "uuid"
 
-import { CONFIG, ERRORS } from "../constants"
+import { ERRORS } from "../constants"
 import { allowInitialUser, authenticate } from "../middlewares/auth"
 import { User } from "../models/User"
 
