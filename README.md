@@ -22,27 +22,27 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 ### Users
 
-[x] `GET /api/users` List Users
+- [x] `GET /api/users` List Users
 
-[x] `POST /api/users` Create User
+- [x] `POST /api/users` Create User
 
-[] `GET /api/users/{user-id}` Get User
+- [] `GET /api/users/{user-id}` Get User
 
-[] `UPDATE /api/users/{user-id}` Update User
+- [] `UPDATE /api/users/{user-id}` Update User
 
-[x] `DELETE /api/user/{user-id}` Delete User
+- [x] `DELETE /api/user/{user-id}` Delete User
 
 ### Articles
 
-[] `GET /api/articles` List Articles
+- [] `GET /api/articles` List Articles
 
-[x] `POST /api/articles` Create Article
+- [x] `POST /api/articles` Create Article
 
-[] `GET /api/articles/{article-id}` Get Article
+- [] `GET /api/articles/{article-id}` Get Article
 
-[] `UPDATE /api/articles/{article-id}` Update Article
+- [] `UPDATE /api/articles/{article-id}` Update Article
 
-[] `DELETE /api/articles/{article-id}` Delete Article
+- [] `DELETE /api/articles/{article-id}` Delete Article
 
 ## Configuration
 
