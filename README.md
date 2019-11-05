@@ -57,7 +57,7 @@ A [sample configuration file](config.example.json) is provided in the repository
 
 ## Running Locally
 
-You can run Notepad locally in development mode for testing by cloning the repository, installing dependecies with `yarn`, and finally running the development server with `yarn dev`.
+You can run Notepad locally in development mode for testing by cloning the repository, installing dependencies with `yarn`, and finally running the development server with `yarn dev`.
 
 ### Debugging
 
