@@ -8,9 +8,9 @@ import {
   PrimaryKey,
   Table,
   UpdatedAt,
-} from 'sequelize-typescript'
+} from "sequelize-typescript"
 
-import { User } from './User'
+import { User } from "./User"
 
 @Table
 export class Article extends Model<Article> {

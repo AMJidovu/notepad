@@ -1,20 +1,20 @@
-import { promisifyAll } from 'bluebird'
-import { Request, Response } from 'express'
-import { INTERNAL_SERVER_ERROR, UNAUTHORIZED } from 'http-status-codes'
-import jwt from 'jsonwebtoken'
+import { promisifyAll } from "bluebird"
+import { Request, Response } from "express"
+import { INTERNAL_SERVER_ERROR, UNAUTHORIZED } from "http-status-codes"
+import jwt from "jsonwebtoken"
 
-import { CONFIG, ERRORS } from '../constants'
-import { User } from '../models/User'
+import { CONFIG, ERRORS } from "../constants"
+import { User } from "../models/User"
 
 const { verify } = promisifyAll(jwt)
 
 export const authenticate = async (req: Request, res: Response, next) => {
-  const authorizationHeader = req.get('Authorization') || ''
+  const authorizationHeader = req.get("Authorization") || ""
 
   if (authorizationHeader) {
     try {
       const decoded: any = await verify(authorizationHeader, CONFIG.secret)
-      const user = await User.scope('withoutPassword').findByPk(decoded.user)
+      const user = await User.scope("withoutPassword").findByPk(decoded.user)
 
       if (user) {
         res.locals.user = user

@@ -1,15 +1,15 @@
-import { Router } from 'express'
-import { check, validationResult } from 'express-validator'
-import { BAD_REQUEST } from 'http-status-codes'
-import { sign } from 'jsonwebtoken'
+import { Router } from "express"
+import { check, validationResult } from "express-validator"
+import { BAD_REQUEST } from "http-status-codes"
+import { sign } from "jsonwebtoken"
 
-import { CONFIG, ERRORS } from '../constants'
-import { authenticate } from '../lib/services/auth'
+import { CONFIG, ERRORS } from "../constants"
+import { authenticate } from "../lib/services/auth"
 
 export const auth = Router()
 
 auth.post(
-  '/login',
+  "/login",
   // prettier-ignore
   [
     check('email').exists().isEmail(),

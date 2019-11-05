@@ -10,14 +10,14 @@ import {
   Table,
   Unique,
   UpdatedAt,
-} from 'sequelize-typescript'
+} from "sequelize-typescript"
 
-import { Article } from './Article'
+import { Article } from "./Article"
 
 @Scopes(() => ({
   withoutPassword: {
     attributes: {
-      exclude: ['password'],
+      exclude: ["password"],
     },
   },
 }))

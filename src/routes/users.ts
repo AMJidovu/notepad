@@ -1,17 +1,17 @@
-import { hash } from 'argon2'
-import { Router } from 'express'
-import { check, validationResult } from 'express-validator'
-import { BAD_REQUEST, CREATED, OK } from 'http-status-codes'
-import { v4 as uuid } from 'uuid'
+import { hash } from "argon2"
+import { Router } from "express"
+import { check, validationResult } from "express-validator"
+import { BAD_REQUEST, CREATED, OK } from "http-status-codes"
+import { v4 as uuid } from "uuid"
 
-import { CONFIG, ERRORS } from '../constants'
-import { allowInitialUser, authenticate } from '../middlewares/auth'
-import { User } from '../models/User'
+import { CONFIG, ERRORS } from "../constants"
+import { allowInitialUser, authenticate } from "../middlewares/auth"
+import { User } from "../models/User"
 
 export const users = Router()
 
 users.post(
-  '/',
+  "/",
   // prettier-ignore
   [
     check('firstName').exists().isLength({ min: 1}),
@@ -34,22 +34,22 @@ users.post(
 
       res.status(CREATED).send(user)
     } catch (error) {
-      error.name === 'SequelizeUniqueConstraintError'
+      error.name === "SequelizeUniqueConstraintError"
         ? res.status(BAD_REQUEST).send(ERRORS.USER_EXISTS)
         : next(error)
     }
   },
 )
 
-users.get('/', authenticate, async (req, res, next) => {
+users.get("/", authenticate, async (req, res, next) => {
   try {
-    res.status(OK).send(await User.scope('withoutPassword').findAll())
+    res.status(OK).send(await User.scope("withoutPassword").findAll())
   } catch (error) {
     next(error)
   }
 })
 
-users.delete('/:id', authenticate, async (req, res, next) => {
+users.delete("/:id", authenticate, async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.id)
 
