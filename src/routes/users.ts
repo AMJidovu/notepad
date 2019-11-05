@@ -14,10 +14,10 @@ users.post(
   "/",
   // prettier-ignore
   [
-    check('firstName').exists().isLength({ min: 1}),
-    check('lastName').exists().isLength({min: 1}),
-    check('email').exists().isEmail(),
-    check('password').exists().isLength({ min: 8 }),
+    check("firstName").exists().isLength({ min: 1}),
+    check("lastName").exists().isLength({min: 1}),
+    check("email").exists().isEmail(),
+    check("password").exists().isLength({ min: 8 }),
   ],
   allowInitialUser,
   async (req, res, next) => {

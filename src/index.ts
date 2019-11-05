@@ -3,10 +3,10 @@ import compression from "compression"
 import express from "express"
 import morgan from "morgan"
 
+import { sequelize } from "./lib/sequelize"
+import { articles } from "./routes/articles"
 import { auth } from "./routes/auth"
 import { users } from "./routes/users"
-import { articles } from "./routes/articles"
-import { sequelize } from "./lib/sequelize"
 
 const app = express()
 

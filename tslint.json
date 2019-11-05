@@ -6,7 +6,7 @@
   },
   "rules": {
     "semicolon": [true, "never"],
-    "quotemark": [true, "single"],
+    "quotemark": [true, "double"],
     "member-access": [false],
     "ordered-imports": [true],
     "max-line-length": [true, 150],

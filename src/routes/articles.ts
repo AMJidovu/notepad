@@ -1,16 +1,16 @@
-import { v4 as uuid } from "uuid"
 import { Router } from "express"
+import { check, validationResult } from "express-validator"
 import {
-  CREATED,
   BAD_REQUEST,
+  CREATED,
   INTERNAL_SERVER_ERROR,
   OK,
 } from "http-status-codes"
-import { check, validationResult } from "express-validator"
+import { v4 as uuid } from "uuid"
 
+import { ERRORS } from "../constants"
 import { authenticate as authMiddleware } from "../middlewares/auth"
 import { Article } from "../models/Article"
-import { ERRORS } from "../constants"
 
 export const articles = Router()
 
@@ -18,8 +18,8 @@ articles.post(
   "/",
   // prettier-ignore
   [
-    check('title').exists().isLength({ min: 1}),
-    check('content').exists().isLength({ min: 1 }),
+    check("title").exists().isLength({ min: 1}),
+    check("content").exists().isLength({ min: 1 }),
   ],
   authMiddleware,
   async (req, res, next) => {
@@ -43,8 +43,7 @@ articles.post(
 
 articles.get("/", async (req, res, next) => {
   try {
-    const articles = await Article.findAll()
-    res.status(OK).send(articles)
+    res.status(OK).send(await Article.findAll())
   } catch (error) {
     res.status(INTERNAL_SERVER_ERROR).send(ERRORS.SERVER_ERROR)
   }
@@ -52,8 +51,7 @@ articles.get("/", async (req, res, next) => {
 
 articles.get("/:id", async (req, res, next) => {
   try {
-    const article = await Article.findByPk(req.params.id)
-    res.status(OK).send(article)
+    res.status(OK).send(await Article.findByPk(req.params.id))
   } catch (error) {
     res.status(INTERNAL_SERVER_ERROR).send(ERRORS.SERVER_ERROR)
   }

@@ -12,8 +12,8 @@ auth.post(
   "/login",
   // prettier-ignore
   [
-    check('email').exists().isEmail(),
-    check('password').exists(),
+    check("email").exists().isEmail(),
+    check("password").exists(),
   ],
   async (req, res, next) => {
     if (!validationResult(req).isEmpty()) {
