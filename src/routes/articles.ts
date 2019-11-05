@@ -1,6 +1,11 @@
 import { v4 as uuid } from "uuid"
 import { Router } from "express"
-import { CREATED, BAD_REQUEST, INTERNAL_SERVER_ERROR } from "http-status-codes"
+import {
+  CREATED,
+  BAD_REQUEST,
+  INTERNAL_SERVER_ERROR,
+  OK,
+} from "http-status-codes"
 import { check, validationResult } from "express-validator"
 
 import { authenticate as authMiddleware } from "../middlewares/auth"
@@ -35,3 +40,21 @@ articles.post(
     }
   },
 )
+
+articles.get("/", async (req, res, next) => {
+  try {
+    const articles = await Article.findAll()
+    res.status(OK).send(articles)
+  } catch (error) {
+    res.status(INTERNAL_SERVER_ERROR).send(ERRORS.SERVER_ERROR)
+  }
+})
+
+articles.get("/:id", async (req, res, next) => {
+  try {
+    const article = await Article.findByPk(req.params.id)
+    res.status(OK).send(article)
+  } catch (error) {
+    res.status(INTERNAL_SERVER_ERROR).send(ERRORS.SERVER_ERROR)
+  }
+})
