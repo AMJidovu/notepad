@@ -19,6 +19,7 @@ All endpoints that modify the database require a valid `Authorization` header.
 ### Authorization
 
 - [x] `POST /api/auth/login` Authenticate User
+
 - [x] `POST /api/auth/user` Current Authenticated User
 
 ### Users
