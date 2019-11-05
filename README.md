@@ -78,7 +78,7 @@ I use Visual Studio Code to debug Notepad, here is a sample debug configuration:
 
 ## Building from Source
 
-Notepad can be built very easily from source. First clone this repository, then install dependecies with `yarn`. After that is complete simply run `yarn build` to build the application, when that is complete run `yarn start` to start the application.
+Notepad can be built very easily from source. First clone this repository, then install dependencies with `yarn`. After that is complete simply run `yarn build` to build the application, when that is complete run `yarn start` to start the application.
 
 ## Running with Docker
 
