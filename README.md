@@ -19,6 +19,7 @@ All endpoints that modify the database require a valid `Authorization` header.
 ### Authorization
 
 - [x] `POST /api/auth/login` Authenticate User
+- [x] `POST /api/auth/user` Current Authenticated User
 
 ### Users
 
@@ -34,11 +35,11 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 ### Articles
 
-- [ ] `GET /api/articles` List Articles
+- [ x] `GET /api/articles` List Articles
 
 - [x] `POST /api/articles` Create Article
 
-- [ ] `GET /api/articles/{article-id}` Get Article
+- [x] `GET /api/articles/{article-id}` Get Article
 
 - [ ] `UPDATE /api/articles/{article-id}` Update Article
 
