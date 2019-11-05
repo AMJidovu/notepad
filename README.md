@@ -117,6 +117,7 @@ As of now, tests have not yet been written. Progress is being tracked in [#12][i
 
 ## License
 
-Notepad is licensed under the MIT license.
+Notepad is licensed under [the MIT license](license).
 
 [i12]: https://github.com/notepad/notepad/issues/12
+[license]: https://github.com/notepad/notepad/blob/master/LICENSE.md
