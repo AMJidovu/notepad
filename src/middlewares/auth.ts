@@ -9,7 +9,7 @@ import { User } from "../models/User"
 const { verify } = promisifyAll(jwt)
 
 export const authenticate = async (req: Request, res: Response, next) => {
-  const authorizationHeader = req.get("Authorization") || ""
+  const authorizationHeader = req.get("Authorization") ?? ""
 
   if (authorizationHeader) {
     try {
