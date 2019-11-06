@@ -28,7 +28,7 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 - [x] `POST /api/users` Create User
 
-- [ ] `GET /api/users/{user-id}` Get User
+- [x] `GET /api/users/{user-id}` Get User
 
 - [ ] `UPDATE /api/users/{user-id}` Update User
 
