@@ -56,3 +56,11 @@ articles.get("/:id", async (req, res, next) => {
     res.status(INTERNAL_SERVER_ERROR).send(ERRORS.SERVER_ERROR)
   }
 })
+
+articles.delete("/:id", authMiddleware, async (req, res, next) => {
+  try {
+    res.status(OK).send(await (await Article.findByPk(req.params.id)).destroy())
+  } catch (error) {
+    res.status(INTERNAL_SERVER_ERROR).send(ERRORS.SERVER_ERROR)
+  }
+})

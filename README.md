@@ -44,7 +44,7 @@ All endpoints that modify the database require a valid `Authorization` header.
 
 - [ ] `UPDATE /api/articles/{article-id}` Update Article
 
-- [ ] `DELETE /api/articles/{article-id}` Delete Article
+- [x] `DELETE /api/articles/{article-id}` Delete Article
 
 ## Configuration
 
